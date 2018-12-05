@@ -11,6 +11,7 @@ const ALL_RECIPES_QUERY = gql`
     recipes(first: $first, skip: $skip, orderBy: createdAt_DESC) {
       id
       name
+      description
       ingredients
       instructions
       image
@@ -26,16 +27,18 @@ const Center = styled.div`
 const RecipesList = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
+  grid-gap: 20px;
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 class Recipes extends Component {
   render() {
     return (
       <Center>
-        <Pagination page={this.props.page} />
         <Query
           query={ALL_RECIPES_QUERY}
           variables={{

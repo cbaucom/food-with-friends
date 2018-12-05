@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const Item = styled.div`
   background: white;
@@ -11,6 +11,9 @@ const Item = styled.div`
     width: 100%;
     height: 400px;
     object-fit: cover;
+    @media (max-width: 600px) {
+      height: 300px;
+    }
   }
   p {
     font-size: 12px;

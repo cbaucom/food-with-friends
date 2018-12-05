@@ -15,8 +15,14 @@ export default class Recipe extends Component {
     const { recipe } = this.props;
     return (
       <RecipeStyles>
-        {recipe.image && <img src={recipe.image} alt={recipe.name} />}
-
+        <Link
+          href={{
+            pathname: "/recipe",
+            query: { id: recipe.id }
+          }}
+        >
+          <a>{recipe.image && <img src={recipe.image} alt={recipe.name} />}</a>
+        </Link>
         <Title>
           <Link
             href={{
@@ -30,16 +36,16 @@ export default class Recipe extends Component {
         <p>{recipe.description}</p>
 
         <div className="buttonList">
-          <Link
+          {/* <Link
             href={{
               pathname: "update",
               query: { id: recipe.id }
             }}
           >
             <a>Edit ✏️</a>
-          </Link>
+          </Link> */}
           <AddToFavorites id={recipe.id} />
-          <DeleteRecipe id={recipe.id}>Delete Recipe</DeleteRecipe>
+          {/* <DeleteRecipe id={recipe.id}>Delete Recipe</DeleteRecipe> */}
         </div>
       </RecipeStyles>
     );
