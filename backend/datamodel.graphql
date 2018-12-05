@@ -1,0 +1,35 @@
+enum Permission {
+  ADMIN
+  USER
+  RECIPECREATE
+  RECIPEUPDATE
+  RECIPEDELETE
+  PERMISSIONUPDATE
+}
+
+type User {
+  id: ID! @unique
+  name: String!
+  email: String! @unique
+  password: String!
+  resetToken: String
+  resetTokenExpiry: Float
+  permissions: [Permission]
+  favorites: [FavoriteRecipe!]!
+}
+
+type Recipe {
+  id: ID! @unique
+  name: String!
+  ingredients: [String!]
+  instructions: [String!]
+  image: String
+  largeImage: String
+  user: User!
+}
+
+type FavoriteRecipe {
+  id: ID! @unique
+  recipe: Recipe
+  user: User!
+}

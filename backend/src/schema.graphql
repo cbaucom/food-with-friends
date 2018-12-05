@@ -1,0 +1,56 @@
+# import * from './generated/prisma.graphql'
+
+type SuccessMessage {
+  message: String
+}
+
+type Mutation {
+  createRecipe(
+    name: String
+    ingredients: [String!]
+    instructions: [String!]
+    image: String
+    largeImage: String
+  ): Recipe!
+  updateRecipe(
+    id: ID!
+    name: String
+    ingredients: [String]
+    instructions: [String]
+  ): Recipe!
+  deleteRecipe(id: ID!): Recipe
+  signup(email: String!, password: String!, name: String!): User!
+  signin(email: String!, password: String!): User!
+  signout: SuccessMessage
+  requestReset(email: String!): SuccessMessage
+  resetPassword(
+    resetToken: String!
+    password: String!
+    confirmPassword: String!
+  ): User!
+  updatePermissions(permissions: [Permission], userId: ID!): User
+  addToFavorites(id: ID!): FavoriteRecipe
+  removeFromFavorites(id: ID!): FavoriteRecipe
+  updatePassword(password: String!, confirmPassword: String!): User!
+}
+
+type Query {
+  recipes(
+    where: RecipeWhereInput
+    orderBy: RecipeOrderByInput
+    skip: Int
+    first: Int
+  ): [Recipe]!
+  recipe(where: RecipeWhereUniqueInput!): Recipe
+  recipesConnection(where: RecipeWhereInput): RecipeConnection!
+  me: User
+  users: [User!]
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+  permissions: [Permission!]!
+  favorites: [FavoriteRecipe!]!
+}

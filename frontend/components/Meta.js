@@ -1,0 +1,45 @@
+import React from "react";
+import NextHead from "next/head";
+import { string } from "prop-types";
+
+const defaultDescription = "An app to share recipes with friends";
+const defaultOGURL = "";
+const defaultOGImage = "";
+
+const Meta = props => (
+  <NextHead>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Food with Friends</title>
+    <link rel="shortcut icon" href="/static/favicon.png" />
+    {/* <link rel="icon" sizes="192x192" href="/static/touch-icon.png" /> */}
+    <link rel="apple-touch-icon" href="/static/touch-icon.png" />
+    <link rel="mask-icon" href="/static/favicon-mask.svg" color="#49B882" />
+    <link rel="stylesheet" type="text/css" href="/static/nprogress.css" />
+    <meta
+      name="description"
+      content={props.description || defaultDescription}
+    />
+    <meta property="og:url" content={props.url || defaultOGURL} />
+    <meta property="og:title" content={props.title || ""} />
+    <meta
+      property="og:description"
+      content={props.description || defaultDescription}
+    />
+    <meta name="twitter:site" content={props.url || defaultOGURL} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={props.ogImage || defaultOGImage} />
+    <meta property="og:image" content={props.ogImage || defaultOGImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+  </NextHead>
+);
+
+Meta.propTypes = {
+  title: string,
+  description: string,
+  url: string,
+  ogImage: string
+};
+
+export default Meta;
