@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/chris-baucom/recipes-with-friends/dev
-# timestamp: Tue Dec 04 2018 00:51:20 GMT-0500 (Eastern Standard Time)
+# timestamp: Wed Dec 05 2018 15:29:27 GMT-0500 (Eastern Standard Time)
 
 type AggregateFavoriteRecipe {
   count: Int!
@@ -14,9 +14,7 @@ type AggregateUser {
 }
 
 type BatchPayload {
-  """
-  The number of nodes that have been affected by the Batch operation.
-  """
+  """The number of nodes that have been affected by the Batch operation."""
   count: Long!
 }
 
@@ -26,18 +24,12 @@ type FavoriteRecipe implements Node {
   user: User!
 }
 
-"""
-A connection to a list of recipes.
-"""
+"""A connection to a list of items."""
 type FavoriteRecipeConnection {
-  """
-  Information to aid in pagination.
-  """
+  """Information to aid in pagination."""
   pageInfo: PageInfo!
 
-  """
-  A list of edges.
-  """
+  """A list of edges."""
   edges: [FavoriteRecipeEdge]!
   aggregate: AggregateFavoriteRecipe!
 }
@@ -56,18 +48,12 @@ input FavoriteRecipeCreateWithoutUserInput {
   recipe: RecipeCreateOneInput
 }
 
-"""
-An edge in a connection.
-"""
+"""An edge in a connection."""
 type FavoriteRecipeEdge {
-  """
-  The recipe at the end of the edge.
-  """
+  """The item at the end of the edge."""
   node: FavoriteRecipe!
 
-  """
-  A cursor for use in pagination.
-  """
+  """A cursor for use in pagination."""
   cursor: String!
 }
 
@@ -85,85 +71,53 @@ type FavoriteRecipePreviousValues {
 }
 
 input FavoriteRecipeScalarWhereInput {
-  """
-  Logical AND on all given filters.
-  """
+  """Logical AND on all given filters."""
   AND: [FavoriteRecipeScalarWhereInput!]
 
-  """
-  Logical OR on all given filters.
-  """
+  """Logical OR on all given filters."""
   OR: [FavoriteRecipeScalarWhereInput!]
 
-  """
-  Logical NOT on all given filters combined by AND.
-  """
+  """Logical NOT on all given filters combined by AND."""
   NOT: [FavoriteRecipeScalarWhereInput!]
   id: ID
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   id_not: ID
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   id_in: [ID!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   id_not_in: [ID!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   id_lt: ID
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   id_lte: ID
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   id_gt: ID
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   id_gte: ID
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   id_contains: ID
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   id_not_contains: ID
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   id_starts_with: ID
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   id_not_starts_with: ID
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   id_ends_with: ID
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   id_not_ends_with: ID
 }
 
@@ -175,19 +129,13 @@ type FavoriteRecipeSubscriptionPayload {
 }
 
 input FavoriteRecipeSubscriptionWhereInput {
-  """
-  Logical AND on all given filters.
-  """
+  """Logical AND on all given filters."""
   AND: [FavoriteRecipeSubscriptionWhereInput!]
 
-  """
-  Logical OR on all given filters.
-  """
+  """Logical OR on all given filters."""
   OR: [FavoriteRecipeSubscriptionWhereInput!]
 
-  """
-  Logical NOT on all given filters combined by AND.
-  """
+  """Logical NOT on all given filters combined by AND."""
   NOT: [FavoriteRecipeSubscriptionWhereInput!]
 
   """
@@ -243,85 +191,53 @@ input FavoriteRecipeUpsertWithWhereUniqueWithoutUserInput {
 }
 
 input FavoriteRecipeWhereInput {
-  """
-  Logical AND on all given filters.
-  """
+  """Logical AND on all given filters."""
   AND: [FavoriteRecipeWhereInput!]
 
-  """
-  Logical OR on all given filters.
-  """
+  """Logical OR on all given filters."""
   OR: [FavoriteRecipeWhereInput!]
 
-  """
-  Logical NOT on all given filters combined by AND.
-  """
+  """Logical NOT on all given filters combined by AND."""
   NOT: [FavoriteRecipeWhereInput!]
   id: ID
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   id_not: ID
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   id_in: [ID!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   id_not_in: [ID!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   id_lt: ID
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   id_lte: ID
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   id_gt: ID
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   id_gte: ID
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   id_contains: ID
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   id_not_contains: ID
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   id_starts_with: ID
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   id_not_starts_with: ID
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   id_ends_with: ID
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   id_not_ends_with: ID
   recipe: RecipeWhereInput
   user: UserWhereInput
@@ -341,38 +257,17 @@ type Mutation {
   createFavoriteRecipe(data: FavoriteRecipeCreateInput!): FavoriteRecipe!
   createRecipe(data: RecipeCreateInput!): Recipe!
   createUser(data: UserCreateInput!): User!
-  updateFavoriteRecipe(
-    data: FavoriteRecipeUpdateInput!
-    where: FavoriteRecipeWhereUniqueInput!
-  ): FavoriteRecipe
+  updateFavoriteRecipe(data: FavoriteRecipeUpdateInput!, where: FavoriteRecipeWhereUniqueInput!): FavoriteRecipe
   updateRecipe(data: RecipeUpdateInput!, where: RecipeWhereUniqueInput!): Recipe
   updateUser(data: UserUpdateInput!, where: UserWhereUniqueInput!): User
   deleteFavoriteRecipe(where: FavoriteRecipeWhereUniqueInput!): FavoriteRecipe
   deleteRecipe(where: RecipeWhereUniqueInput!): Recipe
   deleteUser(where: UserWhereUniqueInput!): User
-  upsertFavoriteRecipe(
-    where: FavoriteRecipeWhereUniqueInput!
-    create: FavoriteRecipeCreateInput!
-    update: FavoriteRecipeUpdateInput!
-  ): FavoriteRecipe!
-  upsertRecipe(
-    where: RecipeWhereUniqueInput!
-    create: RecipeCreateInput!
-    update: RecipeUpdateInput!
-  ): Recipe!
-  upsertUser(
-    where: UserWhereUniqueInput!
-    create: UserCreateInput!
-    update: UserUpdateInput!
-  ): User!
-  updateManyRecipes(
-    data: RecipeUpdateManyMutationInput!
-    where: RecipeWhereInput
-  ): BatchPayload!
-  updateManyUsers(
-    data: UserUpdateManyMutationInput!
-    where: UserWhereInput
-  ): BatchPayload!
+  upsertFavoriteRecipe(where: FavoriteRecipeWhereUniqueInput!, create: FavoriteRecipeCreateInput!, update: FavoriteRecipeUpdateInput!): FavoriteRecipe!
+  upsertRecipe(where: RecipeWhereUniqueInput!, create: RecipeCreateInput!, update: RecipeUpdateInput!): Recipe!
+  upsertUser(where: UserWhereUniqueInput!, create: UserCreateInput!, update: UserUpdateInput!): User!
+  updateManyRecipes(data: RecipeUpdateManyMutationInput!, where: RecipeWhereInput): BatchPayload!
+  updateManyUsers(data: UserUpdateManyMutationInput!, where: UserWhereInput): BatchPayload!
   deleteManyFavoriteRecipes(where: FavoriteRecipeWhereInput): BatchPayload!
   deleteManyRecipes(where: RecipeWhereInput): BatchPayload!
   deleteManyUsers(where: UserWhereInput): BatchPayload!
@@ -384,38 +279,24 @@ enum MutationType {
   DELETED
 }
 
-"""
-An object with an ID
-"""
+"""An object with an ID"""
 interface Node {
-  """
-  The id of the object.
-  """
+  """The id of the object."""
   id: ID!
 }
 
-"""
-Information about pagination in a connection.
-"""
+"""Information about pagination in a connection."""
 type PageInfo {
-  """
-  When paginating forwards, are there more recipes?
-  """
+  """When paginating forwards, are there more items?"""
   hasNextPage: Boolean!
 
-  """
-  When paginating backwards, are there more recipes?
-  """
+  """When paginating backwards, are there more items?"""
   hasPreviousPage: Boolean!
 
-  """
-  When paginating backwards, the cursor to continue.
-  """
+  """When paginating backwards, the cursor to continue."""
   startCursor: String
 
-  """
-  When paginating forwards, the cursor to continue.
-  """
+  """When paginating forwards, the cursor to continue."""
   endCursor: String
 }
 
@@ -429,71 +310,19 @@ enum Permission {
 }
 
 type Query {
-  favoriteRecipes(
-    where: FavoriteRecipeWhereInput
-    orderBy: FavoriteRecipeOrderByInput
-    skip: Int
-    after: String
-    before: String
-    first: Int
-    last: Int
-  ): [FavoriteRecipe]!
-  recipes(
-    where: RecipeWhereInput
-    orderBy: RecipeOrderByInput
-    skip: Int
-    after: String
-    before: String
-    first: Int
-    last: Int
-  ): [Recipe]!
-  users(
-    where: UserWhereInput
-    orderBy: UserOrderByInput
-    skip: Int
-    after: String
-    before: String
-    first: Int
-    last: Int
-  ): [User]!
+  favoriteRecipes(where: FavoriteRecipeWhereInput, orderBy: FavoriteRecipeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FavoriteRecipe]!
+  recipes(where: RecipeWhereInput, orderBy: RecipeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [Recipe]!
+  users(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [User]!
   favoriteRecipe(where: FavoriteRecipeWhereUniqueInput!): FavoriteRecipe
   recipe(where: RecipeWhereUniqueInput!): Recipe
   user(where: UserWhereUniqueInput!): User
-  favoriteRecipesConnection(
-    where: FavoriteRecipeWhereInput
-    orderBy: FavoriteRecipeOrderByInput
-    skip: Int
-    after: String
-    before: String
-    first: Int
-    last: Int
-  ): FavoriteRecipeConnection!
-  recipesConnection(
-    where: RecipeWhereInput
-    orderBy: RecipeOrderByInput
-    skip: Int
-    after: String
-    before: String
-    first: Int
-    last: Int
-  ): RecipeConnection!
-  usersConnection(
-    where: UserWhereInput
-    orderBy: UserOrderByInput
-    skip: Int
-    after: String
-    before: String
-    first: Int
-    last: Int
-  ): UserConnection!
+  favoriteRecipesConnection(where: FavoriteRecipeWhereInput, orderBy: FavoriteRecipeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): FavoriteRecipeConnection!
+  recipesConnection(where: RecipeWhereInput, orderBy: RecipeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): RecipeConnection!
+  usersConnection(where: UserWhereInput, orderBy: UserOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): UserConnection!
 
-  """
-  Fetches an object given its ID
-  """
+  """Fetches an object given its ID"""
   node(
-    """
-    The ID of an object
-    """
+    """The ID of an object"""
     id: ID!
   ): Node
 }
@@ -501,6 +330,7 @@ type Query {
 type Recipe implements Node {
   id: ID!
   name: String!
+  description: String
   ingredients: [String!]!
   instructions: [String!]!
   image: String
@@ -508,18 +338,12 @@ type Recipe implements Node {
   user: User!
 }
 
-"""
-A connection to a list of recipes.
-"""
+"""A connection to a list of items."""
 type RecipeConnection {
-  """
-  Information to aid in pagination.
-  """
+  """Information to aid in pagination."""
   pageInfo: PageInfo!
 
-  """
-  A list of edges.
-  """
+  """A list of edges."""
   edges: [RecipeEdge]!
   aggregate: AggregateRecipe!
 }
@@ -530,6 +354,7 @@ input RecipeCreateingredientsInput {
 
 input RecipeCreateInput {
   name: String!
+  description: String
   image: String
   largeImage: String
   ingredients: RecipeCreateingredientsInput
@@ -546,18 +371,12 @@ input RecipeCreateOneInput {
   connect: RecipeWhereUniqueInput
 }
 
-"""
-An edge in a connection.
-"""
+"""An edge in a connection."""
 type RecipeEdge {
-  """
-  The recipe at the end of the edge.
-  """
+  """The item at the end of the edge."""
   node: Recipe!
 
-  """
-  A cursor for use in pagination.
-  """
+  """A cursor for use in pagination."""
   cursor: String!
 }
 
@@ -566,6 +385,8 @@ enum RecipeOrderByInput {
   id_DESC
   name_ASC
   name_DESC
+  description_ASC
+  description_DESC
   image_ASC
   image_DESC
   largeImage_ASC
@@ -579,6 +400,7 @@ enum RecipeOrderByInput {
 type RecipePreviousValues {
   id: ID!
   name: String!
+  description: String
   ingredients: [String!]!
   instructions: [String!]!
   image: String
@@ -593,19 +415,13 @@ type RecipeSubscriptionPayload {
 }
 
 input RecipeSubscriptionWhereInput {
-  """
-  Logical AND on all given filters.
-  """
+  """Logical AND on all given filters."""
   AND: [RecipeSubscriptionWhereInput!]
 
-  """
-  Logical OR on all given filters.
-  """
+  """Logical OR on all given filters."""
   OR: [RecipeSubscriptionWhereInput!]
 
-  """
-  Logical NOT on all given filters combined by AND.
-  """
+  """Logical NOT on all given filters combined by AND."""
   NOT: [RecipeSubscriptionWhereInput!]
 
   """
@@ -632,6 +448,7 @@ input RecipeSubscriptionWhereInput {
 
 input RecipeUpdateDataInput {
   name: String
+  description: String
   image: String
   largeImage: String
   ingredients: RecipeUpdateingredientsInput
@@ -645,6 +462,7 @@ input RecipeUpdateingredientsInput {
 
 input RecipeUpdateInput {
   name: String
+  description: String
   image: String
   largeImage: String
   ingredients: RecipeUpdateingredientsInput
@@ -658,6 +476,7 @@ input RecipeUpdateinstructionsInput {
 
 input RecipeUpdateManyMutationInput {
   name: String
+  description: String
   image: String
   largeImage: String
   ingredients: RecipeUpdateingredientsInput
@@ -679,283 +498,213 @@ input RecipeUpsertNestedInput {
 }
 
 input RecipeWhereInput {
-  """
-  Logical AND on all given filters.
-  """
+  """Logical AND on all given filters."""
   AND: [RecipeWhereInput!]
 
-  """
-  Logical OR on all given filters.
-  """
+  """Logical OR on all given filters."""
   OR: [RecipeWhereInput!]
 
-  """
-  Logical NOT on all given filters combined by AND.
-  """
+  """Logical NOT on all given filters combined by AND."""
   NOT: [RecipeWhereInput!]
   id: ID
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   id_not: ID
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   id_in: [ID!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   id_not_in: [ID!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   id_lt: ID
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   id_lte: ID
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   id_gt: ID
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   id_gte: ID
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   id_contains: ID
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   id_not_contains: ID
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   id_starts_with: ID
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   id_not_starts_with: ID
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   id_ends_with: ID
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   id_not_ends_with: ID
   name: String
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   name_not: String
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   name_in: [String!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   name_not_in: [String!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   name_lt: String
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   name_lte: String
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   name_gt: String
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   name_gte: String
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   name_contains: String
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   name_not_contains: String
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   name_starts_with: String
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   name_not_starts_with: String
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   name_ends_with: String
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   name_not_ends_with: String
+  description: String
+
+  """All values that are not equal to given value."""
+  description_not: String
+
+  """All values that are contained in given list."""
+  description_in: [String!]
+
+  """All values that are not contained in given list."""
+  description_not_in: [String!]
+
+  """All values less than the given value."""
+  description_lt: String
+
+  """All values less than or equal the given value."""
+  description_lte: String
+
+  """All values greater than the given value."""
+  description_gt: String
+
+  """All values greater than or equal the given value."""
+  description_gte: String
+
+  """All values containing the given string."""
+  description_contains: String
+
+  """All values not containing the given string."""
+  description_not_contains: String
+
+  """All values starting with the given string."""
+  description_starts_with: String
+
+  """All values not starting with the given string."""
+  description_not_starts_with: String
+
+  """All values ending with the given string."""
+  description_ends_with: String
+
+  """All values not ending with the given string."""
+  description_not_ends_with: String
   image: String
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   image_not: String
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   image_in: [String!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   image_not_in: [String!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   image_lt: String
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   image_lte: String
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   image_gt: String
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   image_gte: String
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   image_contains: String
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   image_not_contains: String
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   image_starts_with: String
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   image_not_starts_with: String
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   image_ends_with: String
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   image_not_ends_with: String
   largeImage: String
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   largeImage_not: String
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   largeImage_in: [String!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   largeImage_not_in: [String!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   largeImage_lt: String
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   largeImage_lte: String
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   largeImage_gt: String
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   largeImage_gte: String
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   largeImage_contains: String
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   largeImage_not_contains: String
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   largeImage_starts_with: String
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   largeImage_not_starts_with: String
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   largeImage_ends_with: String
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   largeImage_not_ends_with: String
   user: UserWhereInput
 }
@@ -965,9 +714,7 @@ input RecipeWhereUniqueInput {
 }
 
 type Subscription {
-  favoriteRecipe(
-    where: FavoriteRecipeSubscriptionWhereInput
-  ): FavoriteRecipeSubscriptionPayload
+  favoriteRecipe(where: FavoriteRecipeSubscriptionWhereInput): FavoriteRecipeSubscriptionPayload
   recipe(where: RecipeSubscriptionWhereInput): RecipeSubscriptionPayload
   user(where: UserSubscriptionWhereInput): UserSubscriptionPayload
 }
@@ -980,29 +727,15 @@ type User implements Node {
   resetToken: String
   resetTokenExpiry: Float
   permissions: [Permission!]!
-  favorites(
-    where: FavoriteRecipeWhereInput
-    orderBy: FavoriteRecipeOrderByInput
-    skip: Int
-    after: String
-    before: String
-    first: Int
-    last: Int
-  ): [FavoriteRecipe!]
+  favorites(where: FavoriteRecipeWhereInput, orderBy: FavoriteRecipeOrderByInput, skip: Int, after: String, before: String, first: Int, last: Int): [FavoriteRecipe!]
 }
 
-"""
-A connection to a list of recipes.
-"""
+"""A connection to a list of items."""
 type UserConnection {
-  """
-  Information to aid in pagination.
-  """
+  """Information to aid in pagination."""
   pageInfo: PageInfo!
 
-  """
-  A list of edges.
-  """
+  """A list of edges."""
   edges: [UserEdge]!
   aggregate: AggregateUser!
 }
@@ -1040,18 +773,12 @@ input UserCreateWithoutFavoritesInput {
   permissions: UserCreatepermissionsInput
 }
 
-"""
-An edge in a connection.
-"""
+"""An edge in a connection."""
 type UserEdge {
-  """
-  The recipe at the end of the edge.
-  """
+  """The item at the end of the edge."""
   node: User!
 
-  """
-  A cursor for use in pagination.
-  """
+  """A cursor for use in pagination."""
   cursor: String!
 }
 
@@ -1092,19 +819,13 @@ type UserSubscriptionPayload {
 }
 
 input UserSubscriptionWhereInput {
-  """
-  Logical AND on all given filters.
-  """
+  """Logical AND on all given filters."""
   AND: [UserSubscriptionWhereInput!]
 
-  """
-  Logical OR on all given filters.
-  """
+  """Logical OR on all given filters."""
   OR: [UserSubscriptionWhereInput!]
 
-  """
-  Logical NOT on all given filters combined by AND.
-  """
+  """Logical NOT on all given filters combined by AND."""
   NOT: [UserSubscriptionWhereInput!]
 
   """
@@ -1196,385 +917,235 @@ input UserUpsertWithoutFavoritesInput {
 }
 
 input UserWhereInput {
-  """
-  Logical AND on all given filters.
-  """
+  """Logical AND on all given filters."""
   AND: [UserWhereInput!]
 
-  """
-  Logical OR on all given filters.
-  """
+  """Logical OR on all given filters."""
   OR: [UserWhereInput!]
 
-  """
-  Logical NOT on all given filters combined by AND.
-  """
+  """Logical NOT on all given filters combined by AND."""
   NOT: [UserWhereInput!]
   id: ID
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   id_not: ID
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   id_in: [ID!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   id_not_in: [ID!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   id_lt: ID
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   id_lte: ID
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   id_gt: ID
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   id_gte: ID
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   id_contains: ID
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   id_not_contains: ID
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   id_starts_with: ID
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   id_not_starts_with: ID
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   id_ends_with: ID
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   id_not_ends_with: ID
   name: String
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   name_not: String
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   name_in: [String!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   name_not_in: [String!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   name_lt: String
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   name_lte: String
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   name_gt: String
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   name_gte: String
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   name_contains: String
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   name_not_contains: String
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   name_starts_with: String
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   name_not_starts_with: String
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   name_ends_with: String
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   name_not_ends_with: String
   email: String
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   email_not: String
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   email_in: [String!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   email_not_in: [String!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   email_lt: String
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   email_lte: String
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   email_gt: String
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   email_gte: String
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   email_contains: String
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   email_not_contains: String
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   email_starts_with: String
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   email_not_starts_with: String
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   email_ends_with: String
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   email_not_ends_with: String
   password: String
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   password_not: String
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   password_in: [String!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   password_not_in: [String!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   password_lt: String
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   password_lte: String
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   password_gt: String
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   password_gte: String
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   password_contains: String
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   password_not_contains: String
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   password_starts_with: String
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   password_not_starts_with: String
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   password_ends_with: String
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   password_not_ends_with: String
   resetToken: String
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   resetToken_not: String
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   resetToken_in: [String!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   resetToken_not_in: [String!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   resetToken_lt: String
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   resetToken_lte: String
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   resetToken_gt: String
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   resetToken_gte: String
 
-  """
-  All values containing the given string.
-  """
+  """All values containing the given string."""
   resetToken_contains: String
 
-  """
-  All values not containing the given string.
-  """
+  """All values not containing the given string."""
   resetToken_not_contains: String
 
-  """
-  All values starting with the given string.
-  """
+  """All values starting with the given string."""
   resetToken_starts_with: String
 
-  """
-  All values not starting with the given string.
-  """
+  """All values not starting with the given string."""
   resetToken_not_starts_with: String
 
-  """
-  All values ending with the given string.
-  """
+  """All values ending with the given string."""
   resetToken_ends_with: String
 
-  """
-  All values not ending with the given string.
-  """
+  """All values not ending with the given string."""
   resetToken_not_ends_with: String
   resetTokenExpiry: Float
 
-  """
-  All values that are not equal to given value.
-  """
+  """All values that are not equal to given value."""
   resetTokenExpiry_not: Float
 
-  """
-  All values that are contained in given list.
-  """
+  """All values that are contained in given list."""
   resetTokenExpiry_in: [Float!]
 
-  """
-  All values that are not contained in given list.
-  """
+  """All values that are not contained in given list."""
   resetTokenExpiry_not_in: [Float!]
 
-  """
-  All values less than the given value.
-  """
+  """All values less than the given value."""
   resetTokenExpiry_lt: Float
 
-  """
-  All values less than or equal the given value.
-  """
+  """All values less than or equal the given value."""
   resetTokenExpiry_lte: Float
 
-  """
-  All values greater than the given value.
-  """
+  """All values greater than the given value."""
   resetTokenExpiry_gt: Float
 
-  """
-  All values greater than or equal the given value.
-  """
+  """All values greater than or equal the given value."""
   resetTokenExpiry_gte: Float
   favorites_every: FavoriteRecipeWhereInput
   favorites_some: FavoriteRecipeWhereInput
