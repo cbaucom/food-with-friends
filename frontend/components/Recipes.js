@@ -26,8 +26,9 @@ const Center = styled.div`
 
 const RecipesList = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(375px, 1fr));
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
   @media (max-width: 600px) {

@@ -35,6 +35,9 @@ const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 10px;
+    /* @media only screen and (max-width: 480px) {
+      font-size: 100%;
+    } */
   }
   *, *:before, *:after {
     box-sizing: inherit;
