@@ -22,10 +22,14 @@ const Logo = styled.h1`
   position: relative;
   z-index: 2;
   transform: skew(-20deg);
-  @media (max-width: 400px) {
+  @media (max-width: 420px) {
     font-size: 1.25rem;
   }
+  @media (max-width: 550px) {
+    font-size: 1.5rem;
+  }
   a {
+    height: 100%;
     padding: 1rem 3rem;
     display: flex;
     align-items: center;

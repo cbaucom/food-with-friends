@@ -13,6 +13,10 @@ const SingleRecipeStyles = styled.div`
   grid-auto-columns: 1fr;
   grid-auto-flow: column;
   min-height: 400px;
+  @media (max-width: 550px) {
+    grid-template-rows: repeat(auto-fit, minmax(75px, auto));
+    /* grid-template-columns: repeat(auto-fit, minmax(75px, 350px)); */
+  }
   img {
     width: 100%;
     height: 100%;
@@ -21,6 +25,9 @@ const SingleRecipeStyles = styled.div`
   .details {
     margin: 3rem;
     font-size: 2rem;
+    ul {
+      margin-top: 0;
+    }
   }
 `;
 

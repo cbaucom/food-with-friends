@@ -19,9 +19,13 @@ const NavStyles = styled.ul`
     background: none;
     border: 0;
     cursor: pointer;
-    @media (max-width: 400px) {
+    @media (max-width: 420px) {
       padding: 1rem;
       font-size: 1.25rem;
+    }
+    @media (max-width: 550px) {
+      padding: 1.25rem;
+      font-size: 1.5rem;
     }
     &:before {
       content: "";
@@ -44,11 +48,12 @@ const NavStyles = styled.ul`
       transition: width 0.4s;
       transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
       left: 50%;
-      margin-top: 2rem;
+      margin-top: 3rem;
     }
     &:hover,
     &:focus {
       outline: none;
+      color: #94bae9;
       &:after {
         width: calc(100% - 60px);
       }

@@ -23,12 +23,17 @@ const Form = styled.form`
   text-align: left;
   button {
     border: none;
-    font-size: 1.25rem;
+    font-size: 2rem;
     background: rgba(0, 0, 0, 0.1);
-    width: 250px;
+    width: 100%;
     height: 50px;
     cursor: pointer;
     margin: 15px 0px;
+    &:hover,
+    &:focus {
+      background-color: #94bae9;
+      opacity: 0.8;
+    }
   }
   fieldset {
     border: none;
@@ -39,7 +44,8 @@ const Form = styled.form`
     border: none;
     border-bottom: 2px solid #94bae9;
     height: 44px;
-    font-size: 18px;
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
   }
   textarea {
     border: 1px solid #ddd;

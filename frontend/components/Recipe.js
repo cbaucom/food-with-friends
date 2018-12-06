@@ -5,6 +5,8 @@ import Title from "./styles/Title";
 import RecipeStyles from "./styles/RecipeStyles";
 import DeleteRecipe from "../components/DeleteRecipe";
 import AddToFavorites from "../components/AddToFavorites";
+import User from "./User";
+
 export default class Recipe extends Component {
   static propTypes = {
     recipe: PropTypes.object.isRequired
@@ -14,29 +16,33 @@ export default class Recipe extends Component {
     // const recipe = this.props.recipe;
     const { recipe } = this.props;
     return (
-      <RecipeStyles>
-        <Link
-          href={{
-            pathname: "/recipe",
-            query: { id: recipe.id }
-          }}
-        >
-          <a>{recipe.image && <img src={recipe.image} alt={recipe.name} />}</a>
-        </Link>
-        <Title>
-          <Link
-            href={{
-              pathname: "/recipe",
-              query: { id: recipe.id }
-            }}
-          >
-            <a>{recipe.name}</a>
-          </Link>
-        </Title>
-        <p>{recipe.description}</p>
+      <User>
+        {({ data: { me } }) => (
+          <RecipeStyles>
+            <Link
+              href={{
+                pathname: "/recipe",
+                query: { id: recipe.id }
+              }}
+            >
+              <a>
+                {recipe.image && <img src={recipe.image} alt={recipe.name} />}
+              </a>
+            </Link>
+            <Title>
+              <Link
+                href={{
+                  pathname: "/recipe",
+                  query: { id: recipe.id }
+                }}
+              >
+                <a>{recipe.name}</a>
+              </Link>
+            </Title>
+            <p>{recipe.description}</p>
 
-        <div className="buttonList">
-          {/* <Link
+            <div className="buttonList">
+              {/* <Link
             href={{
               pathname: "update",
               query: { id: recipe.id }
@@ -44,10 +50,12 @@ export default class Recipe extends Component {
           >
             <a>Edit ✏️</a>
           </Link> */}
-          <AddToFavorites id={recipe.id} />
-          {/* <DeleteRecipe id={recipe.id}>Delete Recipe</DeleteRecipe> */}
-        </div>
-      </RecipeStyles>
+              <AddToFavorites id={recipe.id} />
+              {/* <DeleteRecipe id={recipe.id}>Delete Recipe</DeleteRecipe> */}
+            </div>
+          </RecipeStyles>
+        )}
+      </User>
     );
   }
 }
